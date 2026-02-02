@@ -52,6 +52,7 @@ sphinx-rtd-theme = "1.0.0"
 venv = ".venv"
 
 [project]
+name = "sbti-finance-tool"
 license = "MIT"
 license-files = ["LICENSE"]
 
