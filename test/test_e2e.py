@@ -19,7 +19,6 @@ import copy
 import SBTi
 from typing import List
 from SBTi.data.data_provider import DataProvider
-from typing import List
 from SBTi.interfaces import IDataProviderCompany, IDataProviderTarget
 
 
@@ -51,7 +50,7 @@ class EndToEndTest(unittest.TestCase):
 
     def setUp(self):
         company_id = "BaseCompany"
-        self.BASE_COMP_SCORE = 0.43
+        self.BASE_COMP_SCORE = 1.14
         self.company_base = IDataProviderCompany(
             company_name=company_id,
             company_id=company_id,
@@ -77,7 +76,7 @@ class EndToEndTest(unittest.TestCase):
             base_year_ghg_s1=100,
             base_year_ghg_s2=0,
             base_year_ghg_s3=0,
-            end_year=2030,
+            end_year=2035,
         )
 
         # pf

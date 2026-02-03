@@ -69,6 +69,25 @@ For installing the latest stable release in PyPi run:
 pip install sbti-finance-tool
 ```
 
+## Financial Institution Frameworks
+
+This tool supports two SBTi frameworks for financial institutions:
+
+| Framework | Abbreviation | Description |
+|-----------|--------------|-------------|
+| **FI Near-Term Targets** | FINT | All validated SBT targets count (temperature agnostic) |
+| **FI Net-Zero Standard** | FINZ | Only 1.5°C validated targets count (per Implementation List) |
+
+### Portfolio Coverage Categories
+
+| Category | FINT | FINZ | Description |
+|----------|------|------|-------------|
+| **In Transition** | ✓ | ✓ | Companies with validated 1.5°C targets |
+| **Other SBT** | ✓ | — | Companies with WB2°C or 2°C validated targets |
+| **Assessed** | — | — | Companies without validated SBT targets |
+
+See `examples/Simple_portfolio_coverage.ipynb` for a complete example of calculating portfolio coverage for both frameworks.
+
 ## Development
 
 To set up the local dev environment with all dependencies, [install poetry](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions) and run
