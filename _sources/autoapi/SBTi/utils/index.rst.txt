@@ -103,13 +103,15 @@ Attributes
    :return: Merged list of targets
 
 
-.. py:function:: get_data(data_providers: List[SBTi.data.DataProvider], portfolio: List[SBTi.interfaces.PortfolioCompany]) -> pandas.DataFrame
+.. py:function:: get_data(data_providers: List[SBTi.data.DataProvider], portfolio: List[SBTi.interfaces.PortfolioCompany], cutoff_date: Optional[datetime.datetime] = None) -> pandas.DataFrame
 
    Get the required data from the data provider(s), validate the targets and return a 9-box grid for each company.
    Enhanced to use SBTi authoritative target data when available.
 
    :param data_providers: A list of DataProvider instances
    :param portfolio: A list of PortfolioCompany models
+   :param cutoff_date: Optional cutoff date for filtering targets. Both SBTi targets (by publication date)
+       and provider targets (by base year) will be filtered to only include targets that existed on or before this date.
    :return: A data frame containing the relevant company-target data
 
 
