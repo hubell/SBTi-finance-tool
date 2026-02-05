@@ -146,6 +146,19 @@ class ETimeFrames(SortableEnum):
     LONG = "long"
 
 
+class FINZAlignmentCategory(Enum):
+    """
+    FINZ climate alignment categories per Table 4.2 of FINZ Standard.
+    Used to categorize portfolio companies for FINZ.Metric.2 calculation.
+
+    Note: For FINZ purposes, only "In Transition" (1.5°C targets) counts as aligned.
+    All other companies (including those with WB2°C/2°C targets) are "Assessed".
+    The granular target classification (1.5°C, WB2°C, 2°C) is preserved separately.
+    """
+    IN_TRANSITION = "In Transition"      # 1.5°C SBTi validated target (FINZ aligned)
+    ASSESSED = "Assessed"                # No 1.5°C target (includes WB2°C, 2°C, and no target)
+
+
 class IDataProviderTarget(BaseModel):
     company_id: str
     target_type: str

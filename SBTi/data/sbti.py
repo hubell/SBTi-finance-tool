@@ -384,3 +384,76 @@ class SBTi:
                 company.sbti_validated = False
 
         return companies, sbti_target_data
+
+    def get_target_classification(
+        self, company_name: str = None, isin: str = None, lei: str = None
+    ) -> Optional[str]:
+        """
+        Get the target classification for a company (1.5°C, WB2°C, 2°C, or None).
+
+        Uses waterfall matching: LEI > ISIN > Company Name
+
+        :param company_name: Company name to search for
+        :param isin: ISIN to search for
+        :param lei: LEI to search for
+        :return: Target classification string or None if not found
+        """
+        # Use raw targets data (not filter_cta_file which strips classification columns)
+        # Filter to only companies with validated targets
+        targets_df = self.targets[
+            (self.targets[self.c.COL_ACTION] == self.c.VALUE_ACTION_TARGET)
+        ].copy()
+
+        # Check if Target Classification column exists
+        classification_col = None
+        for col in ['Target Classification', 'Near Term Classification', 'near_term_target_classification']:
+            if col in targets_df.columns:
+                classification_col = col
+                break
+
+        if classification_col is None:
+            return None
+
+        # Waterfall matching: LEI > ISIN > Company Name
+        matches = pd.DataFrame()
+
+        if lei and str(lei).lower() != 'nan' and len(str(lei)) > 3:
+            matches = targets_df[targets_df[self.c.COL_COMPANY_LEI] == lei]
+
+        if len(matches) == 0 and isin and str(isin).lower() != 'nan':
+            matches = targets_df[targets_df[self.c.COL_COMPANY_ISIN] == isin]
+
+        if len(matches) == 0 and company_name:
+            matches = targets_df[
+                targets_df[self.c.COL_COMPANY_NAME].str.lower() == company_name.lower()
+            ]
+
+        if len(matches) > 0:
+            classification = matches.iloc[0][classification_col]
+            if pd.notna(classification):
+                return str(classification)
+
+        return None
+
+    def is_15c_aligned(
+        self, company_name: str = None, isin: str = None, lei: str = None
+    ) -> bool:
+        """
+        Check if a company has a 1.5°C aligned SBTi target.
+
+        Per FINZ Standard, only pure 1.5°C targets count as "In Transition".
+
+        :param company_name: Company name to search for
+        :param isin: ISIN to search for
+        :param lei: LEI to search for
+        :return: True if company has 1.5°C target, False otherwise
+        """
+        classification = self.get_target_classification(company_name, isin, lei)
+
+        if classification is None:
+            return False
+
+        # Pure 1.5°C classifications
+        pure_15c_values = ['1.5°C', '1.5°C/1.5°C', '1.5']
+
+        return any(val in classification for val in pure_15c_values)

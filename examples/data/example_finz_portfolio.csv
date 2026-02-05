@@ -1,0 +1,21 @@
+company_name,isin,lei,asset_class,sector,financial_activity,segment,investment_value,methodology_used,methodology_version,data_source
+Greenleaf Foods Corp,XX0000000101,549300AAAABBBBCCCC01,Listed Equity,Food & Beverage,Asset Manager Investing,A,8500000,,,
+Brightfield AgriTech,XX0000000102,549300AAAABBBBCCCC02,Corporate Bonds,Agriculture,Lending,A,6200000,,,
+Solaris Power Group,XX0000000103,549300AAAABBBBCCCC03,Listed Equity,D35 - Electricity,Asset Owner Investing,B,4500000,,,
+Clearwater Consumer Co,XX0000000104,549300AAAABBBBCCCC04,Listed Equity,Consumer Goods,Asset Manager Investing,A,7300000,,,
+Crestline Water Systems SE,XX0000000105,549300AAAABBBBCCCC05,Listed Equity,Water Utilities,Capital Markets,A,5000000,TPI Carbon Performance,v4.0,TPI
+Baltic Offshore Wind AS,XX0000000106,549300AAAABBBBCCCC06,Corporate Bonds,Utilities,Lending,B,3800000,,,
+Apex Digital Solutions,XX0000000107,549300AAAABBBBCCCC07,Listed Equity,Technology,Asset Manager Investing,A,9200000,,,
+Sentinel Insurance Group,XX0000000108,549300AAAABBBBCCCC08,Corporate Bonds,Insurance,Re/insurance underwriting,C,2800000,,,
+Meridian Utilities SA,XX0000000109,549300AAAABBBBCCCC09,Listed Equity,Utilities,Asset Owner Investing,A,4100000,,,
+Ironstone Cement Ltd,XX0000000110,549300AAAABBBBCCCC10,Corporate Bonds,Cement,Lending,A,3200000,,,
+Amazonia Pulp & Paper,XX0000000111,,Listed Equity,Paper & Forest Products,Capital Markets,B,2600000,,,
+Pacific Re Holdings,XX0000000112,549300AAAABBBBCCCC12,Corporate Bonds,Insurance,Re/insurance underwriting,C,3500000,,,
+Windward Renewables ApS,XX0000000113,,Listed Equity,Renewable Energy,Asset Owner Investing,A,5500000,,,Climate Solution
+Horizon Bank Ltd,XX0000000114,,Listed Equity,Banking,Lending,A,4800000,,,
+Vanguard Semiconductors,XX0000000115,,Listed Equity,Technology,Asset Manager Investing,A,6700000,,,
+Evergreen Infrastructure LP,XX0000000116,,Project Finance,Renewable Energy,Capital Markets,D,3900000,,,Climate Solution
+Alpine Reinsurance AG,,549300AAAABBBBCCCC17,Corporate Bonds,Insurance,Re/insurance underwriting,C,2200000,,,
+Atlas Steel Industries,XX0000000118,,Listed Equity,C24 - Steel,Asset Owner Investing,A,3100000,,,
+Compass Shipping Group,XX0000000119,549300AAAABBBBCCCC19,Corporate Bonds,Transport,Lending,B,2900000,,,
+Pinnacle Health Sciences,XX0000000120,,Listed Equity,Healthcare,Capital Markets,A,5800000,,,

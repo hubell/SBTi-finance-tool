@@ -8,3 +8,5 @@ __version__ = "1.2.3"
 from . import data
 from . import utils
 from . import temperature_score
+from .interfaces import FINZAlignmentCategory
+from .portfolio_coverage_tvp import PortfolioCoverageTVP
